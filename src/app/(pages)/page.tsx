@@ -1,10 +1,13 @@
 const Home = () => {
   return (
-    <main className="min-h-screen w-full p-24">
-      <h1 className="text-4xl font-bold mb-4">This is Home page!</h1>
-      <div className="flex gap-4 justify-start items-start">
+    <div className="min-h-screen flex flex-col w-full p-8 md:p-24 pt-24">
+      <article className="prose daisy-prose mb-8">
+        <h1>This is Home page!</h1>
+      </article>
+
+      <div className="flex flex-wrap gap-4 w-full">
         <button className="daisy-btn daisy-btn-primary w-64 rounded-full">
-          Button
+          Zero
         </button>
         <button className="daisy-btn daisy-btn-primary">One</button>
         <button className="daisy-btn daisy-btn-secondary">Two</button>
@@ -13,7 +16,7 @@ const Home = () => {
         </button>
         <button className="daisy-btn rounded-none px-16">Four</button>
       </div>
-    </main>
+    </div>
   );
 };
 
