@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from "react";
 import type { Metadata } from "next";
+import StoreProvider from "@/lib/StoreProvider";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,8 +17,10 @@ type IProps = {
 
 const RootLayout: FC<IProps> = ({ children }) => {
   return (
-    <html lang="en" data-theme="dracula">
-      <body className={inter.className}>{children}</body>
+    <html lang="en">
+      <body className={inter.className}>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
     </html>
   );
 };
