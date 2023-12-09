@@ -1,39 +1,51 @@
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 
 const MobileMenu = () => {
   return (
-    <div className="daisy-dropdown">
-      <div
-        tabIndex={0}
-        role="daisy-button"
-        className="daisy-btn daisy-btn-ghost lg:hidden"
-      >
-        <HiOutlineMenuAlt2 className="text-xl" />
-      </div>
-      <ul
-        tabIndex={0}
-        className="daisy-menu daisy-menu-sm daisy-dropdown-content mt-3 z-[1] p-2 shadow bg-base-100/90 backdrop-blur-lg rounded-box w-52"
-      >
-        <li>
-          <Link href="/features">Features</Link>
-        </li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li>
-              <a>Submenu 1</a>
-            </li>
-            <li>
-              <a>Submenu 2</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <Link href="/pricing">Pricing</Link>
-        </li>
-      </ul>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild className="lg:hidden">
+        <button className="daisy-btn daisy-btn-ghost">
+          <HiOutlineMenuAlt2 className="text-xl" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-46 shadow-lg">
+        <DropdownMenuGroup>
+          <DropdownMenuItem asChild>
+            <Link href="/features">Features</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/pricing">Pricing</Link>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent>
+                <DropdownMenuItem>Email</DropdownMenuItem>
+                <DropdownMenuItem>Message</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>More...</DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
