@@ -2,38 +2,19 @@ import Link from "next/link";
 import ThemeSelector from "./ThemeSelector";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
+import NavMenus from "./NavMenus";
 
 const TopNavbar = () => {
   return (
     <div className="daisy-navbar bg-base-100/90 backdrop-blur-lg fixed top-0 z-50">
       <div className="daisy-navbar-start">
         <MobileMenu />
-        <Link href="/" className="daisy-btn daisy-btn-ghost text-xl">
+        <Link href="/" className="daisy-btn daisy-btn-ghost text-2xl">
           SlacChat
         </Link>
       </div>
       <div className="daisy-navbar-center hidden lg:flex">
-        <ul className="daisy-menu daisy-menu-horizontal px-2">
-          <li>
-            <Link href="/features">Features</Link>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <Link href="/pricing">Pricing</Link>
-          </li>
-        </ul>
+        <NavMenus />
       </div>
       <div className="daisy-navbar-end">
         <ThemeSelector />
