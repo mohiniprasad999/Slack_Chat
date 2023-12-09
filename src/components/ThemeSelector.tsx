@@ -14,17 +14,17 @@ const ThemeSelector = () => {
   };
 
   useEffect(() => {
-    document.querySelector("html").setAttribute("data-theme", currentTheme);
+    document.querySelector("html")?.setAttribute("data-theme", currentTheme);
   }, [currentTheme]);
 
   return (
     <select
-      className="daisy-select daisy-select-bordered daisy-select-sm w-full max-w-[128px] mr-4"
+      className="daisy-select daisy-select-sm w-full max-w-[148px] mr-4 capitalize"
       onChange={handleThemeSelect}
     >
       {themes.map((theme) => (
         <option key={theme} value={theme} defaultValue={currentTheme}>
-          {theme.toUpperCase()}
+          {theme.charAt(0).toUpperCase() + theme.slice(1)}
         </option>
       ))}
     </select>
