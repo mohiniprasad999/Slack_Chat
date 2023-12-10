@@ -24,6 +24,9 @@ const MobileMenu = () => {
       <DropdownMenuContent className="w-46 shadow-lg">
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
+            <Link href="/chat">Chat</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
             <Link href="/features">Features</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>

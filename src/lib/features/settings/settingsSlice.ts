@@ -6,7 +6,7 @@ export type ISettingsState = {
 };
 
 const initialState: ISettingsState = {
-  currentTheme: "light",
+  currentTheme: "dark",
 };
 
 export const settingsSlice = createSlice({

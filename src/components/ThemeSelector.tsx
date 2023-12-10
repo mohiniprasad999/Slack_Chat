@@ -20,6 +20,7 @@ const ThemeSelector = () => {
   return (
     <select
       className="daisy-select daisy-select-sm w-full max-w-[148px] mr-4 capitalize"
+      value={currentTheme}
       onChange={handleThemeSelect}
     >
       {themes.map((theme) => (

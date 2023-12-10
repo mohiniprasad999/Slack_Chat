@@ -17,6 +17,13 @@ const NavMenus = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
+          <Link href="/chat" legacyBehavior passHref>
+            <NavigationMenuLink className="daisy-btn daisy-btn-ghost">
+              Chat
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <Link href="/features" legacyBehavior passHref>
             <NavigationMenuLink className="daisy-btn daisy-btn-ghost">
               Features
